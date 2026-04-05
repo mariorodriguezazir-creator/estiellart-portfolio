@@ -240,6 +240,7 @@
     top: calc(100% + var(--space-sm));
     left: 0;
     right: 0;
+    transform: none; /* Fix: reset desktop centering */
     background: color-mix(in srgb, var(--color-surface-container-lowest) 95%, transparent);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);

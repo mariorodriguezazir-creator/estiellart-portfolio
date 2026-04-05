@@ -193,7 +193,8 @@ main > section {
 }
 
 /* === HERO / HOME === */
-.hero {
+.hero,
+.store-header {
   padding-top: calc(var(--space-4xl) + 4.5rem);
 }
 
@@ -828,7 +829,8 @@ main > section {
 }
 
 /* === HERO OVERRIDES (dark theme) === */
-.hero {
+.hero,
+.store-header {
   position: relative;
   overflow: hidden;
   padding-top: calc(var(--space-4xl) + 4.5rem);
