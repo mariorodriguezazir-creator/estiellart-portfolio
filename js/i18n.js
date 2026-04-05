@@ -17,9 +17,10 @@ const LANG_KEY = 'estiellart-lang';
 const i18nMap = [
   // ── NAV (todas las páginas) ───────────────────────────────
   { s: '.nav__link[data-page="gallery"]',     es: 'Galería',        en: 'Gallery' },
-  { s: '.nav__link[data-page="commissions"]', es: 'Comisiones',     en: 'Commissions' },
+  { s: '.nav__link[data-page="commissions"]', es: 'Encargos',     en: 'Commissions' },
   { s: '.nav__link[data-page="contact"]',     es: 'Contacto',       en: 'Contact' },
-  { s: '#nav-commission-cta',                 es: '✦ Pedir comisión', en: '✦ Commission me' },
+  { s: '#fab-commission-btn',                 es: '✦ Hacer un encargo', en: '✦ Commission me' },
+
 
   // ── FOOTER (todas las páginas) ────────────────────────────
   { s: '.footer__copyright', es: '© 2025 Estiellart. Todos los derechos reservados.', en: '© 2025 Estiellart. All rights reserved.' },
@@ -32,11 +33,11 @@ const i18nMap = [
     es: 'Arte que cuenta<br /><span class="hero__title--accent">tu historia.</span>',
     en: 'Art that tells<br /><span class="hero__title--accent">your story.</span>' },
   { s: '.hero__description',
-    es: 'Bienvenid@ a mi pequeño espacio en internet. Aquí encontrarás mis comisiones, galería, precios y todo lo que necesitás saber para encargar tu ilustración.',
+    es: 'Bienvenid@ a mi pequeño espacio en internet. Aquí encontrarás mis encargos, galería, precios y todo lo que necesitás saber para encargar tu ilustración.',
     en: 'Welcome to my little corner of the internet. Here you\'ll find commissions, gallery, prices and everything you need to know to order your illustration.' },
-  { s: '#hero-commission-btn', es: '✦ Ver comisiones', en: '✦ View commissions' },
+  { s: '#hero-commission-btn', es: '✦ Ver encargos', en: '✦ View commissions' },
   { s: '.hero__actions .btn--ghost', es: 'Ver galería', en: 'View gallery' },
-  { s: '#hero-badge-text',          es: 'Comisiones abiertas', en: 'Commissions open' },
+  { s: '#hero-badge-text',          es: 'Encargos abiertos', en: 'Commissions open' },
 
   // ── INDEX — GALLERY ───────────────────────────────────────
   { s: '.gallery > .container > .gallery__header .label', es: 'Portafolio', en: 'Portfolio' },
@@ -46,7 +47,7 @@ const i18nMap = [
   { s: '#filter-semi',      es: 'Semi Realista',  en: 'Semi Realistic' },
 
   // ── INDEX — BENTO ─────────────────────────────────────────
-  { s: '.shop-bento .label',        es: 'Comisiones ✦', en: 'Commissions ✦' },
+  { s: '.shop-bento .label',        es: 'Encargos ✦', en: 'Commissions ✦' },
   { s: '#commissions-bento-title', html: true, es: 'Tu personaje,<br/>mi pincel.', en: 'Your character,<br/>my brushes.' },
   { s: '.shop-bento__description', html: true,
     es: 'Desde sketches rápidos hasta ilustraciones full color. Chibis, ternurines, semi-realismo y más — desde <strong>$5 USD</strong>.',
@@ -56,12 +57,12 @@ const i18nMap = [
   // ── COMMISSIONS — HEADER ──────────────────────────────────
   { s: '.store-header .label', es: 'Precios y servicios', en: 'Prices & services' },
   { s: '#store-title', html: true,
-    es: 'Comisiones & <span class="store-header__title--accent">Precios</span>',
+    es: 'Encargos & <span class="store-header__title--accent">Precios</span>',
     en: 'Commissions & <span class="store-header__title--accent">Prices</span>' },
   { s: '.store-header__description',
     es: 'Ilustraciones digitales de personajes, sketches, chibis, ternurines y más. Para uso personal. Pago 100% por PayPal antes de comenzar.',
     en: 'Digital character illustrations, sketches, chibis, ternurines and more. For personal use. 100% payment via PayPal before starting.' },
-  { s: '.store-header__status-text', es: 'Comisiones Abiertas', en: 'Commissions Open' },
+  { s: '.store-header__status-text', es: 'Encargos Abiertos', en: 'Commissions Open' },
 
   // ── COMMISSIONS — PRICE TABLE ─────────────────────────────
   { s: '.tiers > .container > .tiers__header .label', es: 'Estilos disponibles', en: 'Available styles' },
