@@ -24,19 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (show) {
             item.style.display = '';
-            // pequeño reflow para que la transición se active
-            requestAnimationFrame(() => {
-              item.style.opacity = '1';
-              item.style.transform = '';
-            });
           } else {
-            item.style.opacity = '0';
-            item.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-              if (item.style.opacity === '0') {
-                item.style.display = 'none';
-              }
-            }, 300);
+            item.style.display = 'none';
           }
         });
       });

@@ -340,20 +340,6 @@ html {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-*, *::before, *::after {
-  transition-property: background-color, border-color, color, box-shadow;
-  transition-duration: 0.25s;
-  transition-timing-function: ease;
-}
-
-/* Excepción: animaciones propias no deben verse afectadas */
-.orb,
-.animate-pulse,
-[class*="gallery__item"],
-.btn--commission {
-  transition: unset;
-}
-
 .gallery__item {
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
               box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);

@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const pageAliases = {
     'index.html': 'gallery',
-    'tienda.html': 'store',
+    'tienda.html': 'commissions',
+    'comisiones.html': 'commissions',
     'contacto.html': 'contact',
   };
 
@@ -90,6 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!nav.contains(target)) {
       closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeMenu();
+      toggleButton.focus();
     }
   });
 });

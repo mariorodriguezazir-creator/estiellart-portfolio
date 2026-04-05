@@ -8,6 +8,22 @@
 
 const LANG_KEY = 'estiellart-lang';
 
+function safeStorageGet(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (error) {
+    return null;
+  }
+}
+
+function safeStorageSet(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (error) {
+    return;
+  }
+}
+
 // =============================================================
 // MAPA DE TRADUCCIONES
 // key: selector CSS | value: { es, en, html? }
@@ -225,7 +241,7 @@ function applyTranslations(lang) {
 }
 
 function getLang() {
-  return localStorage.getItem('estiellart-lang') || 'es';
+  return safeStorageGet(LANG_KEY) || 'es';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -237,7 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btn.addEventListener('click', () => {
     const next = getLang() === 'es' ? 'en' : 'es';
-    localStorage.setItem('estiellart-lang', next);
+    safeStorageSet(LANG_KEY, next);
     applyTranslations(next);
+    document.dispatchEvent(new Event('languagechange'));
   });
 });

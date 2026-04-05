@@ -11,54 +11,101 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  const initialButtonText = submitButton.textContent ? submitButton.textContent.trim() : 'Send the Message';
+  const getStoredLang = () => {
+    try {
+      return localStorage.getItem('estiellart-lang');
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const getCurrentLang = () => {
+    const storedLang = getStoredLang();
+
+    if (storedLang === 'en' || storedLang === 'es') {
+      return storedLang;
+    }
+
+    return document.documentElement.lang === 'en' ? 'en' : 'es';
+  };
+
+  const messages = {
+    es: {
+      requiredName: 'Por favor ingresá tu nombre',
+      shortName: 'El nombre debe tener al menos 2 caracteres',
+      requiredEmail: 'Por favor ingresá tu correo electrónico',
+      invalidEmail: 'Ingresá un correo electrónico válido',
+      requiredSubject: 'Por favor seleccioná un tipo de comisión',
+      requiredMessage: 'Por favor escribí tu mensaje',
+      shortMessage: 'El mensaje debe tener al menos 10 caracteres',
+      submitting: 'Enviando...',
+      success: '¡Mensaje enviado!',
+      error: 'Error. Intentá de nuevo.',
+      idle: '✦ Enviar solicitud',
+    },
+    en: {
+      requiredName: 'Please enter your name',
+      shortName: 'Name must be at least 2 characters',
+      requiredEmail: 'Please enter your email',
+      invalidEmail: 'Please enter a valid email',
+      requiredSubject: 'Please select a commission type',
+      requiredMessage: 'Please enter your message',
+      shortMessage: 'Message must be at least 10 characters',
+      submitting: 'Sending...',
+      success: 'Message sent!',
+      error: 'Error. Please try again.',
+      idle: '✦ Send request',
+    },
+  };
+
+  const getLocaleMessages = () => messages[getCurrentLang()];
 
   const validators = {
-    name: (value) => {
+    name: (value, locale) => {
       const trimmedValue = value.trim();
 
       if (trimmedValue.length === 0) {
-        return 'Please enter your name';
+        return locale.requiredName;
       }
 
       if (trimmedValue.length < 2) {
-        return 'Name must be at least 2 characters';
+        return locale.shortName;
       }
 
       return '';
     },
-    email: (value) => {
+    email: (value, locale) => {
       const trimmedValue = value.trim();
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (trimmedValue.length === 0) {
-        return 'Please enter your email';
+        return locale.requiredEmail;
       }
 
       if (!emailPattern.test(trimmedValue)) {
-        return 'Please enter a valid email';
+        return locale.invalidEmail;
       }
 
       return '';
     },
-    subject: (value) => {
+    subject: (value, locale) => {
       const trimmedValue = value.trim();
 
       if (trimmedValue.length === 0) {
-        return 'Please select a subject';
+        return locale.requiredSubject;
       }
 
       return '';
     },
-    message: (value) => {
+    message: (value, locale) => {
       const trimmedValue = value.trim();
 
       if (trimmedValue.length === 0) {
-        return 'Please enter your message';
+        return locale.requiredMessage;
       }
 
       if (trimmedValue.length < 10) {
-        return 'Message must be at least 10 characters';
+        return locale.shortMessage;
       }
 
       return '';
@@ -80,12 +127,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (message.length > 0) {
       field.classList.add('input--error');
+      field.setAttribute('aria-invalid', 'true');
+      if (errorElement.id) {
+        field.setAttribute('aria-describedby', errorElement.id);
+      }
       errorElement.textContent = message;
       errorElement.classList.add('form__error--visible');
       return;
     }
 
     field.classList.remove('input--error');
+    field.setAttribute('aria-invalid', 'false');
+    if (errorElement.id) {
+      field.removeAttribute('aria-describedby');
+    }
     errorElement.textContent = '';
     errorElement.classList.remove('form__error--visible');
   };
@@ -98,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return true;
     }
 
-    const message = validator(field.value);
+    const message = validator(field.value, getLocaleMessages());
     showError(field, message);
 
     return message.length === 0;
@@ -107,25 +162,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const formFields = form.querySelectorAll('input, select, textarea');
 
   formFields.forEach((field) => {
+    field.setAttribute('aria-invalid', 'false');
+  });
+
+  const syncIdleButtonText = () => {
+    if (submitButton.disabled || submitButton.classList.contains('btn--success')) {
+      return;
+    }
+
+    submitButton.textContent = getLocaleMessages().idle;
+  };
+
+  formFields.forEach((field) => {
     field.addEventListener('blur', () => {
       validateField(field);
     });
   });
 
+  document.addEventListener('languagechange', () => {
+    syncIdleButtonText();
+  });
+
+  syncIdleButtonText();
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
+    const spamField = form.querySelector('input[name="_honey"]');
+    if (spamField instanceof HTMLInputElement && spamField.value.trim().length > 0) {
+      form.reset();
+      return;
+    }
+
     let isFormValid = true;
+    let firstInvalidField = null;
 
     formFields.forEach((field) => {
       const isValid = validateField(field);
 
       if (isValid === false) {
         isFormValid = false;
+        if (firstInvalidField === null) {
+          firstInvalidField = field;
+        }
       }
     });
 
     if (isFormValid === false) {
+      if (firstInvalidField instanceof HTMLElement) {
+        firstInvalidField.focus();
+      }
       return;
     }
 
@@ -137,12 +223,12 @@ document.addEventListener('DOMContentLoaded', () => {
       formFields.forEach((field) => {
         showError(field, '');
       });
-      submitButton.textContent = initialButtonText;
+      submitButton.textContent = getLocaleMessages().idle;
       submitButton.classList.remove('btn--success');
       submitButton.disabled = false;
     };
 
-    submitButton.textContent = 'Enviando...';
+    submitButton.textContent = getLocaleMessages().submitting;
     submitButton.disabled = true;
 
     fetch("https://formsubmit.co/ajax/Estiellart@gmail.com", {
@@ -153,6 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       body: JSON.stringify({
         _subject: `Nueva Comisión: ${data.subject} de ${data.name}`,
+        _honey: data._honey || '',
         Nombre: data.name,
         Email: data.email,
         Tipo: data.subject,
@@ -164,13 +251,13 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json();
     })
     .then(() => {
-      submitButton.textContent = '¡Mensaje Enviado!';
+      submitButton.textContent = getLocaleMessages().success;
       submitButton.classList.add('btn--success');
       window.setTimeout(resetForm, 3000);
     })
     .catch(error => {
       console.error('Error al enviar el formulario:', error);
-      submitButton.textContent = 'Error. Intenta de nuevo.';
+      submitButton.textContent = getLocaleMessages().error;
       window.setTimeout(resetForm, 3000);
     });
   });

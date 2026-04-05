@@ -129,19 +129,32 @@
   box-shadow: 0 8px 32px rgba(124, 58, 237, 0.65);
 }
 
-/* === SMOOTH GLOBAL TRANSITIONS === */
-a,
-button,
-.btn,
-.card,
-.shop-item,
-.filter-btn,
-.nav__link,
-.nav__toggle,
-.social-btn,
-.contact-socials__pill,
-input,
-select,
-textarea {
-  transition: var(--transition-hover), var(--transition-tonal), var(--transition-overlay);
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .orb,
+  .animate-pulse,
+  .btn--commission,
+  .fab-cta,
+  .placeholder {
+    animation: none !important;
+  }
+
+  .gallery__item:hover,
+  .tier-card:hover,
+  .btn--commission:hover,
+  .fab-cta:hover {
+    transform: none;
+  }
 }

@@ -7,9 +7,25 @@
 
 const THEME_KEY = 'estiellart-theme';
 
+function safeStorageGet(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (error) {
+    return null;
+  }
+}
+
+function safeStorageSet(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (error) {
+    return;
+  }
+}
+
 function getPreferredTheme() {
   return (
-    localStorage.getItem(THEME_KEY) ||
+    safeStorageGet(THEME_KEY) ||
     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
   );
 }
@@ -17,7 +33,7 @@ function getPreferredTheme() {
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   document.documentElement.style.colorScheme = theme;
-  localStorage.setItem(THEME_KEY, theme);
+  safeStorageSet(THEME_KEY, theme);
   const icon = document.getElementById('theme-icon');
   if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
 }

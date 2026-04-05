@@ -6,6 +6,25 @@
     <title>Encargos & Precios | Estiellart</title>
     <meta name="description" content="Tabla de precios de encargos de Estiellart. Full color, sketch, chibis, ternurines, porcelanitas y más. Pago por PayPal." />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=swap" />
+
+    <script>
+      (function () {
+        var t = 'light';
+        try {
+          t = localStorage.getItem('estiellart-theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (error) {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+        document.documentElement.style.colorScheme = t;
+      })();
+    </script>
+
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
@@ -29,11 +48,11 @@
         </div>
 
         <div class="nav__controls">
-          <button class="nav__icon-btn" id="theme-toggle" title="Toggle theme" type="button">
-            <span id="theme-icon">☀️</span>
+          <button class="nav__icon-btn" id="theme-toggle" type="button" aria-label="Cambiar tema">
+            <span id="theme-icon" aria-hidden="true">☀️</span>
           </button>
-          <button class="nav__lang-btn" id="lang-toggle" title="Switch language" type="button">
-            <span id="lang-label">EN</span>
+          <button class="nav__lang-btn" id="lang-toggle" type="button" aria-label="Cambiar idioma">
+            <span id="lang-label" aria-hidden="true">EN</span>
           </button>
         </div>
 
@@ -53,8 +72,8 @@
     <main>
       <!-- =================== HEADER =================== -->
       <section class="store-header reveal" aria-labelledby="store-title">
-        <div class="orb orb--primary" style="width: 45vw; height: 45vw; top: -20%; right: -10%;"></div>
-        <div class="orb orb--secondary" style="width: 30vw; height: 30vw; bottom: 0%; left: -5%;"></div>
+        <div class="orb orb--primary orb--commissions-primary"></div>
+        <div class="orb orb--secondary orb--commissions-secondary"></div>
 
         <div class="container store-header__container">
           <article class="store-header__content">
@@ -87,20 +106,20 @@
           <!-- FULL COLOR -->
           <article class="price-block" id="price-full-color">
             <h3 class="price-block__title">
-              <span class="price-block__dot" style="background: var(--gradient-accent);"></span>
+              <span class="price-block__dot price-block__dot--accent"></span>
               Full Color
             </h3>
             <p class="price-block__note">Tiempo estimado: 1 a 4 semanas</p>
             <div class="tiers__grid">
               <article class="tier-card card" id="tier-fullcolor-bust">
-                <img src="img/Sketch-headshot/459a0000-f36d-40c7-bda0-5cb036ae59d2.jpg" alt="Ejemplo bust full color" class="tier-card__image" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" loading="lazy" />
+                <img src="img/Sketch-headshot/459a0000-f36d-40c7-bda0-5cb036ae59d2.jpg" alt="Ejemplo bust full color" class="tier-card__image" loading="lazy" />
                 <h4 class="tier-card__title">Bust</h4>
                 <p class="tier-card__price badge">$15 USD</p>
                 <p class="tier-card__description">Retrato desde el pecho/busto</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-fullcolor-half">
-                <img src="img/fullcolor-halfbody/844c4656-e7a6-4606-8ca0-71544a35da4d.jpg" alt="Ejemplo half body full color" class="tier-card__image" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" loading="lazy" />
+                <img src="img/fullcolor-halfbody/844c4656-e7a6-4606-8ca0-71544a35da4d.jpg" alt="Ejemplo half body full color" class="tier-card__image" loading="lazy" />
                 <h4 class="tier-card__title">Half Body</h4>
                 <p class="tier-card__price badge">$20 USD</p>
                 <p class="tier-card__description">Personaje hasta la cintura</p>
@@ -108,7 +127,7 @@
               </article>
               <article class="tier-card tier-card--popular card" id="tier-fullcolor-full">
                 <span class="tier-card__badge badge">Más completo</span>
-                <img src="img/fullbody-fullcolor/629ee5fc-29e2-45df-8f4e-5b467afcd114.jpg" alt="Ejemplo full body full color" class="tier-card__image" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" loading="lazy" />
+                <img src="img/fullbody-fullcolor/629ee5fc-29e2-45df-8f4e-5b467afcd114.jpg" alt="Ejemplo full body full color" class="tier-card__image" loading="lazy" />
                 <h4 class="tier-card__title">Full Body</h4>
                 <p class="tier-card__price badge">$25 USD</p>
                 <p class="tier-card__description">Personaje de cuerpo entero</p>
@@ -120,27 +139,27 @@
           <!-- SKETCH B&W -->
           <article class="price-block" id="price-sketch-bw">
             <h3 class="price-block__title">
-              <span class="price-block__dot" style="background: #e5e7eb;"></span>
+              <span class="price-block__dot price-block__dot--neutral"></span>
               <span>Sketch en Blanco y Negro</span>
             </h3>
             <p class="price-block__note">Tiempo estimado: 1 a 2 semanas</p>
             <div class="tiers__grid">
               <article class="tier-card card" id="tier-sketchbw-bust">
-                <img src="img/Sketch-headshot/459a0000-f36d-40c7-bda0-5cb036ae59d2.jpg" alt="Ejemplo bust sketch" class="tier-card__image" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block; filter: grayscale(0.3);" loading="lazy" />
+                <img src="img/Sketch-headshot/459a0000-f36d-40c7-bda0-5cb036ae59d2.jpg" alt="Ejemplo bust sketch" class="tier-card__image tier-card__image--muted" loading="lazy" />
                 <h4 class="tier-card__title">Bust</h4>
                 <p class="tier-card__price badge">$5 USD</p>
                 <p class="tier-card__description">Boceto desde el pecho</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-sketchbw-half">
-                <img src="img/Skeatch-halfbody/1ccc4c1b-7454-4a24-b92b-17efc473d897.jpg" alt="Ejemplo half body sketch" class="tier-card__image" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" loading="lazy" />
+                <img src="img/Skeatch-halfbody/1ccc4c1b-7454-4a24-b92b-17efc473d897.jpg" alt="Ejemplo half body sketch" class="tier-card__image" loading="lazy" />
                 <h4 class="tier-card__title">Half Body</h4>
                 <p class="tier-card__price badge">$10 USD</p>
                 <p class="tier-card__description">Boceto hasta la cintura</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-sketchbw-full">
-                <img src="img/Sketch-fullbody/dd0bf2e9-6e49-4d44-88ef-d4a10b9a95c6.jpg" alt="Ejemplo full body sketch" class="tier-card__image" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" loading="lazy" />
+                <img src="img/Sketch-fullbody/dd0bf2e9-6e49-4d44-88ef-d4a10b9a95c6.jpg" alt="Ejemplo full body sketch" class="tier-card__image" loading="lazy" />
                 <h4 class="tier-card__title">Full Body</h4>
                 <p class="tier-card__price badge">$15 USD</p>
                 <p class="tier-card__description">Boceto de cuerpo entero</p>
@@ -152,27 +171,27 @@
           <!-- SKETCH COLOR -->
           <article class="price-block" id="price-sketch-color">
             <h3 class="price-block__title">
-              <span class="price-block__dot" style="background: var(--gradient-cta);"></span>
+              <span class="price-block__dot price-block__dot--cta"></span>
               <span>Sketch con Color</span>
             </h3>
             <p class="price-block__note">Tiempo estimado: 1 a 2 semanas</p>
             <div class="tiers__grid">
               <article class="tier-card card" id="tier-sketchcolor-bust">
-                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <div class="placeholder tier-card__image"></div>
                 <h4 class="tier-card__title">Bust</h4>
                 <p class="tier-card__price badge">$10 USD</p>
                 <p class="tier-card__description">Boceto coloreado (busto)</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-sketchcolor-half">
-                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <div class="placeholder tier-card__image"></div>
                 <h4 class="tier-card__title">Half Body</h4>
                 <p class="tier-card__price badge">$15 USD</p>
                 <p class="tier-card__description">Boceto coloreado (medio cuerpo)</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-sketchcolor-full">
-                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <div class="placeholder tier-card__image"></div>
                 <h4 class="tier-card__title">Full Body</h4>
                 <p class="tier-card__price badge">$20 USD</p>
                 <p class="tier-card__description">Boceto coloreado (cuerpo entero)</p>
@@ -184,27 +203,27 @@
           <!-- CHIBIS -->
           <article class="price-block" id="price-chibis">
             <h3 class="price-block__title">
-              <span class="price-block__dot" style="background: var(--color-tertiary);"></span>
+              <span class="price-block__dot price-block__dot--tertiary"></span>
               Chibis
             </h3>
             <p class="price-block__note">Tiempo estimado: 1 semana</p>
             <div class="tiers__grid">
               <article class="tier-card card" id="tier-chibi-simple-1-2">
-                <img src="img/Chibi/9767e5ab-9eb8-48ac-8d87-8022c32f184b.jpg" alt="Ejemplo chibi simple color" class="tier-card__image" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" loading="lazy" />
+                <img src="img/Chibi/9767e5ab-9eb8-48ac-8d87-8022c32f184b.jpg" alt="Ejemplo chibi simple color" class="tier-card__image" loading="lazy" />
                 <h4 class="tier-card__title">Simple Color — 1 o 2 per.</h4>
                 <p class="tier-card__price badge">$5 USD</p>
                 <p class="tier-card__description">Chibi simple coloreado</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-chibi-simple-3-4">
-                <img src="img/Chibi/e73e88b0-4e67-45c7-a0e0-c87105d996a0.jpg" alt="Ejemplo chibi grupo" class="tier-card__image" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" loading="lazy" />
+                <img src="img/Chibi/e73e88b0-4e67-45c7-a0e0-c87105d996a0.jpg" alt="Ejemplo chibi grupo" class="tier-card__image" loading="lazy" />
                 <h4 class="tier-card__title">Simple Color — 3 o 4 per.</h4>
                 <p class="tier-card__price badge">$8 USD</p>
                 <p class="tier-card__description">Chibi simple — grupo</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-chibi-full-1-2">
-                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <div class="placeholder tier-card__image"></div>
                 <h4 class="tier-card__title">Full Color — 1 o 2 per.</h4>
                 <p class="tier-card__price badge">$7 USD</p>
                 <p class="tier-card__description">Chibi full color</p>
@@ -216,27 +235,27 @@
           <!-- TERNURINES -->
           <article class="price-block" id="price-ternurines">
             <h3 class="price-block__title">
-              <span class="price-block__dot" style="background: var(--color-secondary);"></span>
+              <span class="price-block__dot price-block__dot--secondary"></span>
               Ternurines
             </h3>
             <p class="price-block__note">Tiempo estimado: 1 semana</p>
             <div class="tiers__grid">
               <article class="tier-card card" id="tier-ternurin-1">
-                <img src="img/Ternuri/990c20b7-6f8f-425c-b1c4-0d412402f761.jpg" alt="Ejemplo 1 ternurín" class="tier-card__image" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" loading="lazy" />
+                <img src="img/Ternuri/990c20b7-6f8f-425c-b1c4-0d412402f761.jpg" alt="Ejemplo 1 ternurín" class="tier-card__image" loading="lazy" />
                 <h4 class="tier-card__title">1 Ternurín</h4>
                 <p class="tier-card__price badge">$10 USD</p>
                 <p class="tier-card__description">Diseño singular adorable</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-ternurin-2">
-                <img src="img/Ternuri/b0d77772-de0b-4d78-a9bc-1de51d17e6d4.jpg" alt="Ejemplo 2 ternurines" class="tier-card__image" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" loading="lazy" />
+                <img src="img/Ternuri/b0d77772-de0b-4d78-a9bc-1de51d17e6d4.jpg" alt="Ejemplo 2 ternurines" class="tier-card__image" loading="lazy" />
                 <h4 class="tier-card__title">2 Ternurines</h4>
                 <p class="tier-card__price badge">$15 USD</p>
                 <p class="tier-card__description">Pareja o duo</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-ternurin-bebe">
-                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <div class="placeholder tier-card__image"></div>
                 <h4 class="tier-card__title">1 Ternurín bebé</h4>
                 <p class="tier-card__price badge">$7 USD</p>
                 <p class="tier-card__description">Versión mini/bebé</p>
@@ -248,27 +267,27 @@
           <!-- PORCELANITAS -->
           <article class="price-block" id="price-porcelanitas">
             <h3 class="price-block__title">
-              <span class="price-block__dot" style="background: linear-gradient(135deg, #fbcfe8, #c084fc);"></span>
+              <span class="price-block__dot price-block__dot--porcelain"></span>
               Porcelanitas
             </h3>
             <p class="price-block__note">Tiempo estimado: 1 a 2 semanas</p>
             <div class="tiers__grid">
               <article class="tier-card card" id="tier-porce-headshot">
-                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <div class="placeholder tier-card__image"></div>
                 <h4 class="tier-card__title">Headshot</h4>
                 <p class="tier-card__price badge">$8 USD</p>
                 <p class="tier-card__description">Retrato estilo porcelana</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-porce-half">
-                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <div class="placeholder tier-card__image"></div>
                 <h4 class="tier-card__title">Half Body</h4>
                 <p class="tier-card__price badge">$12 USD</p>
                 <p class="tier-card__description">Medio cuerpo estilo porcelana</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-porce-full">
-                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <div class="placeholder tier-card__image"></div>
                 <h4 class="tier-card__title">Full Body</h4>
                 <p class="tier-card__price badge">$16 USD</p>
                 <p class="tier-card__description">Cuerpo entero estilo porcelana</p>
@@ -280,27 +299,27 @@
           <!-- YCH + Lineart -->
           <article class="price-block" id="price-extras">
             <h3 class="price-block__title">
-              <span class="price-block__dot" style="background: var(--gradient-gold);"></span>
+              <span class="price-block__dot price-block__dot--gold"></span>
               <span>Extras y Opciones especiales</span>
             </h3>
             <p class="price-block__note">Tiempo estimado: 1 semana</p>
             <div class="tiers__grid">
               <article class="tier-card card" id="tier-ych-relicario">
-                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <div class="placeholder tier-card__image"></div>
                 <h4 class="tier-card__title">YCH Relicario</h4>
                 <p class="tier-card__price badge">$10 USD</p>
                 <p class="tier-card__description">Colores, texto y fondo personalizable</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-lineart">
-                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <div class="placeholder tier-card__image"></div>
                 <h4 class="tier-card__title">Lineart</h4>
                 <p class="tier-card__price badge">$15 USD</p>
                 <p class="tier-card__description">Solo el lineart finalizado</p>
                 <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
               </article>
               <article class="tier-card card" id="tier-flatcolor">
-                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <div class="placeholder tier-card__image"></div>
                 <h4 class="tier-card__title">Flat Color</h4>
                 <p class="tier-card__price badge">$25 USD</p>
                 <p class="tier-card__description">Lineart + colores planos</p>
@@ -374,8 +393,8 @@
       <section class="commission-cta reveal" aria-labelledby="cta-title">
         <div class="container">
           <div class="commission-cta__card">
-            <div class="orb orb--primary" style="width: 30vw; height: 30vw; top: -50%; left: -10%;"></div>
-            <div class="orb orb--secondary" style="width: 20vw; height: 20vw; bottom: -30%; right: -5%;"></div>
+            <div class="orb orb--primary orb--cta-primary"></div>
+            <div class="orb orb--secondary orb--cta-secondary"></div>
             <p class="label">¿Todo listo?</p>
             <h2 class="commission-cta__title" id="cta-title">
               ¡Hagamos algo<br /><span class="hero__title--accent">hermoso juntos!</span>
@@ -402,13 +421,13 @@
         <article class="footer__meta">
           <ul class="footer__socials" aria-label="Redes sociales">
             <li>
-              <a class="footer__link" href="https://www.instagram.com/estiellart/" target="_blank" rel="noopener">Instagram</a>
+              <a class="footer__link" href="https://www.instagram.com/estiellart/" target="_blank" rel="noopener noreferrer">Instagram</a>
             </li>
             <li>
-              <a class="footer__link" href="https://x.com/estiellart" target="_blank" rel="noopener">X (Twitter)</a>
+              <a class="footer__link" href="https://x.com/estiellart" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
             </li>
             <li>
-              <a class="footer__link" href="https://www.facebook.com/Estiellart/" target="_blank" rel="noopener">Facebook</a>
+              <a class="footer__link" href="https://www.facebook.com/Estiellart/" target="_blank" rel="noopener noreferrer">Facebook</a>
             </li>
           </ul>
           <a class="footer__link footer__link--privacy" href="contacto.html#tos">Términos y Condiciones</a>

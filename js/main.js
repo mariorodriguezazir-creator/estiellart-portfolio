@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (anchorLinks.length === 0) {
     return;
@@ -49,9 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
 
       targetElement.scrollIntoView({
-        behavior: 'smooth',
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
         block: 'start',
       });
+
+      if (history.pushState) {
+        history.pushState(null, '', hrefValue);
+      }
+
+      targetElement.setAttribute('tabindex', '-1');
+      targetElement.focus({ preventScroll: true });
     });
   });
 });
