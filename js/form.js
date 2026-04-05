@@ -129,20 +129,49 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    submitButton.textContent = 'Message Sent!';
-    submitButton.classList.add('btn--success');
-    submitButton.disabled = true;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
 
-    window.setTimeout(() => {
+    const resetForm = () => {
       form.reset();
-
       formFields.forEach((field) => {
         showError(field, '');
       });
-
       submitButton.textContent = initialButtonText;
       submitButton.classList.remove('btn--success');
       submitButton.disabled = false;
-    }, 3000);
+    };
+
+    submitButton.textContent = 'Enviando...';
+    submitButton.disabled = true;
+
+    fetch("https://formsubmit.co/ajax/Estiellart@gmail.com", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        _subject: `Nueva Comisión: ${data.subject} de ${data.name}`,
+        Nombre: data.name,
+        Email: data.email,
+        Tipo: data.subject,
+        Mensaje: data.message
+      })
+    })
+    .then(response => {
+      if (!response.ok) throw new Error('Error en la red');
+      return response.json();
+    })
+    .then(() => {
+      submitButton.textContent = '¡Mensaje Enviado!';
+      submitButton.classList.add('btn--success');
+      window.setTimeout(resetForm, 3000);
+    })
+    .catch(error => {
+      console.error('Error al enviar el formulario:', error);
+      submitButton.textContent = 'Error. Intenta de nuevo.';
+      window.setTimeout(resetForm, 3000);
+    });
   });
 });
