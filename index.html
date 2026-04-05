@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estiellart | Ilustradora Digital</title>
+    <meta name="description" content="Bienvenid@ al espacio de Estiellart — ilustradora digital especializada en arte de personajes, chibis, ternurines y más. Comisiones abiertas." />
+
+    <!-- Anti-flash: aplica el tema guardado antes de que cargue el CSS -->
+    <script>
+      (function () {
+        var t = localStorage.getItem('estiellart-theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', t);
+        document.documentElement.style.colorScheme = t;
+      })();
+    </script>
+
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+
+    <script src="js/nav.js" defer></script>
+    <script src="js/gallery.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a class="nav__brand" href="index.html">✦ Estiellart</a>
+
+        <div class="nav__links" id="nav-links">
+          <a class="nav__link nav__link--active" href="index.html" data-page="gallery">Galería</a>
+          <a class="nav__link" href="comisiones.html" data-page="commissions">Comisiones</a>
+          <a class="nav__link" href="contacto.html" data-page="contact">Contacto</a>
+        </div>
+
+        <a class="nav__cta btn btn--commission" href="comisiones.html" id="nav-commission-cta">
+          ✦ Pedir comisión
+        </a>
+
+        <div class="nav__controls">
+          <button class="nav__icon-btn" id="theme-toggle" title="Toggle theme" type="button">
+            <span id="theme-icon">☀️</span>
+          </button>
+          <button class="nav__lang-btn" id="lang-toggle" title="Switch language" type="button">
+            <span id="lang-label">EN</span>
+          </button>
+        </div>
+
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          id="nav-toggle"
+        >
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- =================== HERO =================== -->
+      <section class="hero" aria-labelledby="hero-title">
+        <!-- Orbes de fondo animados -->
+        <div class="orb orb--primary" style="width: 50vw; height: 50vw; top: -15%; left: -15%;"></div>
+        <div class="orb orb--secondary" style="width: 35vw; height: 35vw; top: 10%; right: -10%;"></div>
+        <div class="orb orb--gold" style="width: 25vw; height: 25vw; bottom: 5%; left: 30%;"></div>
+
+        <div class="container hero__container">
+          <article class="hero__content reveal">
+            <p class="label hero__eyebrow">✦ Ilustradora Digital</p>
+            <h1 class="hero__title" id="hero-title">
+              Arte que cuenta<br />
+              <span class="hero__title--accent">tu historia.</span>
+            </h1>
+            <p class="hero__description">
+              Bienvenid@ a mi pequeño espacio en internet. Aquí encontrarás
+              mis comisiones, galería, precios y todo lo que necesitás saber
+              para encargar tu ilustración.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--commission" href="comisiones.html" id="hero-commission-btn">
+                ✦ Ver comisiones
+              </a>
+              <a class="btn btn--ghost" href="#gallery">Ver galería</a>
+            </div>
+          </article>
+
+          <article class="hero__media reveal" aria-label="Arte destacado de Estiellart">
+            <div class="hero__image-frame">
+              <div class="placeholder hero__image" style="aspect-ratio: 4/5" id="hero-artwork-placeholder">
+                <span class="placeholder__text">Tu arte aquí ✦</span>
+              </div>
+              <div class="hero__badge-status badge badge--open" aria-label="Comisiones abiertas">
+                <span class="store-header__status-dot animate-pulse" aria-hidden="true"></span>
+                <span id="hero-badge-text">Comisiones abiertas</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =================== GALLERY =================== -->
+      <section class="gallery reveal" id="gallery" aria-labelledby="gallery-title">
+        <div class="container gallery__container">
+          <header class="gallery__header">
+            <p class="label">Portafolio</p>
+            <h2 class="gallery__title" id="gallery-title">Galería</h2>
+            <p class="gallery__subtitle">
+              Una mezcla curada de semi-realismo, chibis, ternurines y más.
+            </p>
+          </header>
+
+          <!-- Filtros de categoría -->
+          <div class="gallery__filters prints__filters" role="group" aria-label="Filtrar galería">
+            <button class="filter-btn filter-btn--active" type="button" data-filter="all" id="filter-all">Todo</button>
+            <button class="filter-btn" type="button" data-filter="semi-realista" id="filter-semi">Semi Realista</button>
+            <button class="filter-btn" type="button" data-filter="chibi" id="filter-chibi">Chibis</button>
+            <button class="filter-btn" type="button" data-filter="ternurines" id="filter-ternurines">Ternurines</button>
+            <button class="filter-btn" type="button" data-filter="sketch" id="filter-sketch">Sketch</button>
+          </div>
+
+          <div class="gallery__grid" id="gallery-grid">
+            <article class="gallery__item gallery__item--large" style="grid-column: span 8" data-category="semi-realista">
+              <div class="placeholder gallery__media" style="aspect-ratio: 16/9" id="gallery-item-1"></div>
+              <div class="gallery__overlay">
+                <div>
+                  <h3 class="gallery__overlay-title">Arte Semi-Realista</h3>
+                  <p class="gallery__overlay-subtitle">Ilustración de personaje</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery__item gallery__item--small" style="grid-column: span 4" data-category="chibi">
+              <div class="placeholder gallery__media" style="aspect-ratio: 1/1" id="gallery-item-2"></div>
+              <div class="gallery__overlay">
+                <div>
+                  <h3 class="gallery__overlay-title">Chibi Full Color</h3>
+                  <p class="gallery__overlay-subtitle">Diseño de personaje</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery__item gallery__item--small" style="grid-column: span 4" data-category="ternurines">
+              <div class="placeholder gallery__media" style="aspect-ratio: 1/1" id="gallery-item-3"></div>
+              <div class="gallery__overlay">
+                <div>
+                  <h3 class="gallery__overlay-title">Ternurin</h3>
+                  <p class="gallery__overlay-subtitle">Diseño adorable</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery__item gallery__item--large" style="grid-column: span 8" data-category="semi-realista">
+              <div class="placeholder gallery__media" style="aspect-ratio: 16/9" id="gallery-item-4"></div>
+              <div class="gallery__overlay">
+                <div>
+                  <h3 class="gallery__overlay-title">Fan Art</h3>
+                  <p class="gallery__overlay-subtitle">Ilustración de personaje</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery__item gallery__item--portrait" style="grid-column: span 4" data-category="sketch">
+              <div class="placeholder gallery__media" style="aspect-ratio: 3/4" id="gallery-item-5"></div>
+              <div class="gallery__overlay">
+                <div>
+                  <h3 class="gallery__overlay-title">Sketch Color</h3>
+                  <p class="gallery__overlay-subtitle">Boceto artístico</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery__item gallery__item--square" style="grid-column: span 4" data-category="chibi">
+              <div class="placeholder gallery__media" style="aspect-ratio: 1/1" id="gallery-item-6"></div>
+              <div class="gallery__overlay">
+                <div>
+                  <h3 class="gallery__overlay-title">Chibi Simple Color</h3>
+                  <p class="gallery__overlay-subtitle">Diseño de personaje</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery__item gallery__item--square" style="grid-column: span 4" data-category="ternurines">
+              <div class="placeholder gallery__media" style="aspect-ratio: 1/1" id="gallery-item-7"></div>
+              <div class="gallery__overlay">
+                <div>
+                  <h3 class="gallery__overlay-title">Ternurines</h3>
+                  <p class="gallery__overlay-subtitle">Diseño de familia</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================== BENTO COMISIONES =================== -->
+      <section class="shop-bento reveal" id="commissions-preview" aria-labelledby="commissions-bento-title">
+        <div class="container shop-bento__container">
+          <article class="shop-bento__content">
+            <p class="label">Comisiones ✦</p>
+            <h2 class="shop-bento__title" id="commissions-bento-title">
+              Tu personaje,<br/>mi pincel.
+            </h2>
+            <p class="shop-bento__description">
+              Desde sketches rápidos hasta ilustraciones full color.
+              Chibis, ternurines, semi-realismo y más — desde <strong>$5 USD</strong>.
+            </p>
+            <a class="btn btn--commission" href="comisiones.html" id="bento-commission-btn">
+              Ver todos los precios ✦
+            </a>
+          </article>
+
+          <div class="shop-bento__grid" aria-label="Ejemplos de comisiones">
+            <article class="shop-bento__item">
+              <div class="placeholder shop-bento__media" style="aspect-ratio: 1/1">
+                <span class="shop-bento__label">Full Color</span>
+              </div>
+            </article>
+            <article class="shop-bento__item">
+              <div class="placeholder shop-bento__media" style="aspect-ratio: 1/1">
+                <span class="shop-bento__label">Chibi</span>
+              </div>
+            </article>
+            <article class="shop-bento__item">
+              <div class="placeholder shop-bento__media" style="aspect-ratio: 1/1">
+                <span class="shop-bento__label">Ternurín</span>
+              </div>
+            </article>
+            <article class="shop-bento__item">
+              <div class="placeholder shop-bento__media" style="aspect-ratio: 1/1">
+                <span class="shop-bento__label">Sketch</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <article class="footer__brand">
+          <h2 class="footer__title">✦ Estiellart</h2>
+          <p class="footer__copyright">© 2025 Estiellart. Todos los derechos reservados.</p>
+          <p class="footer__anti-ai">
+            🚫 Prohibido el uso de mis ilustraciones para entrenar IAs.
+          </p>
+        </article>
+
+        <article class="footer__meta">
+          <ul class="footer__socials" aria-label="Redes sociales">
+            <li>
+              <a class="footer__link" href="https://www.instagram.com/estiellart/" target="_blank" rel="noopener" aria-label="Instagram de Estiellart">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a class="footer__link" href="https://x.com/estiellart" target="_blank" rel="noopener" aria-label="X / Twitter de Estiellart">
+                X (Twitter)
+              </a>
+            </li>
+            <li>
+              <a class="footer__link" href="https://www.facebook.com/Estiellart/" target="_blank" rel="noopener" aria-label="Facebook de Estiellart">
+                Facebook
+              </a>
+            </li>
+          </ul>
+          <a class="footer__link footer__link--privacy" href="contacto.html#tos">Términos y Condiciones</a>
+        </article>
+      </div>
+    </footer>
+  </body>
+</html>

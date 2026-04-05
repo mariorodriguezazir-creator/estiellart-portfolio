@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comisiones & Precios | Estiellart</title>
+    <meta name="description" content="Tabla de precios de comisiones de Estiellart. Full color, sketch, chibis, ternurines, porcelanitas y más. Pago por PayPal." />
+
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+
+    <script src="js/nav.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a class="nav__brand" href="index.html">✦ Estiellart</a>
+
+        <div class="nav__links" id="nav-links">
+          <a class="nav__link" href="index.html" data-page="gallery">Galería</a>
+          <a class="nav__link nav__link--active" href="comisiones.html" data-page="commissions">Comisiones</a>
+          <a class="nav__link" href="contacto.html" data-page="contact">Contacto</a>
+        </div>
+
+        <a class="nav__cta btn btn--commission" href="contacto.html" id="nav-commission-cta">
+          ✦ Pedir comisión
+        </a>
+
+        <div class="nav__controls">
+          <button class="nav__icon-btn" id="theme-toggle" title="Toggle theme" type="button">
+            <span id="theme-icon">☀️</span>
+          </button>
+          <button class="nav__lang-btn" id="lang-toggle" title="Switch language" type="button">
+            <span id="lang-label">EN</span>
+          </button>
+        </div>
+
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          id="nav-toggle"
+        >
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- =================== HEADER =================== -->
+      <section class="store-header reveal" aria-labelledby="store-title">
+        <div class="orb orb--primary" style="width: 45vw; height: 45vw; top: -20%; right: -10%;"></div>
+        <div class="orb orb--secondary" style="width: 30vw; height: 30vw; bottom: 0%; left: -5%;"></div>
+
+        <div class="container store-header__container">
+          <article class="store-header__content">
+            <p class="label">Precios y servicios</p>
+            <h1 class="store-header__title" id="store-title">
+              Comisiones & <span class="store-header__title--accent">Precios</span>
+            </h1>
+            <p class="store-header__description">
+              Ilustraciones digitales de personajes, sketches, chibis, ternurines y más.
+              Para uso personal. Pago 100% por PayPal antes de comenzar.
+            </p>
+          </article>
+
+          <div class="store-header__status badge" aria-label="Comisiones actualmente abiertas">
+            <span class="store-header__status-dot animate-pulse" aria-hidden="true"></span>
+            <span class="store-header__status-text">Comisiones Abiertas</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================== PRICE TIERS =================== -->
+      <section class="tiers reveal" aria-labelledby="tiers-title">
+        <div class="container tiers__container">
+          <header class="tiers__header">
+            <p class="label">Estilos disponibles</p>
+            <h2 class="tiers__title" id="tiers-title">Tabla de Precios</h2>
+            <div class="section-divider"></div>
+          </header>
+
+          <!-- FULL COLOR -->
+          <article class="price-block" id="price-full-color">
+            <h3 class="price-block__title">
+              <span class="price-block__dot" style="background: var(--gradient-accent);"></span>
+              Full Color
+            </h3>
+            <p class="price-block__note">Tiempo estimado: 1 a 4 semanas</p>
+            <div class="tiers__grid">
+              <article class="tier-card card" id="tier-fullcolor-bust">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Bust</h4>
+                <p class="tier-card__price badge">$15 USD</p>
+                <p class="tier-card__description">Retrato desde el pecho/busto</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-fullcolor-half">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Half Body</h4>
+                <p class="tier-card__price badge">$20 USD</p>
+                <p class="tier-card__description">Personaje hasta la cintura</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card tier-card--popular card" id="tier-fullcolor-full">
+                <span class="tier-card__badge badge">Más completo</span>
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Full Body</h4>
+                <p class="tier-card__price badge">$25 USD</p>
+                <p class="tier-card__description">Personaje de cuerpo entero</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+            </div>
+          </article>
+
+          <!-- SKETCH B&W -->
+          <article class="price-block" id="price-sketch-bw">
+            <h3 class="price-block__title">
+              <span class="price-block__dot" style="background: #e5e7eb;"></span>
+              <span>Sketch en Blanco y Negro</span>
+            </h3>
+            <p class="price-block__note">Tiempo estimado: 1 a 2 semanas</p>
+            <div class="tiers__grid">
+              <article class="tier-card card" id="tier-sketchbw-bust">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Bust</h4>
+                <p class="tier-card__price badge">$5 USD</p>
+                <p class="tier-card__description">Boceto desde el pecho</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-sketchbw-half">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Half Body</h4>
+                <p class="tier-card__price badge">$10 USD</p>
+                <p class="tier-card__description">Boceto hasta la cintura</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-sketchbw-full">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Full Body</h4>
+                <p class="tier-card__price badge">$15 USD</p>
+                <p class="tier-card__description">Boceto de cuerpo entero</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+            </div>
+          </article>
+
+          <!-- SKETCH COLOR -->
+          <article class="price-block" id="price-sketch-color">
+            <h3 class="price-block__title">
+              <span class="price-block__dot" style="background: var(--gradient-cta);"></span>
+              <span>Sketch con Color</span>
+            </h3>
+            <p class="price-block__note">Tiempo estimado: 1 a 2 semanas</p>
+            <div class="tiers__grid">
+              <article class="tier-card card" id="tier-sketchcolor-bust">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Bust</h4>
+                <p class="tier-card__price badge">$10 USD</p>
+                <p class="tier-card__description">Boceto coloreado (busto)</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-sketchcolor-half">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Half Body</h4>
+                <p class="tier-card__price badge">$15 USD</p>
+                <p class="tier-card__description">Boceto coloreado (medio cuerpo)</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-sketchcolor-full">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Full Body</h4>
+                <p class="tier-card__price badge">$20 USD</p>
+                <p class="tier-card__description">Boceto coloreado (cuerpo entero)</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+            </div>
+          </article>
+
+          <!-- CHIBIS -->
+          <article class="price-block" id="price-chibis">
+            <h3 class="price-block__title">
+              <span class="price-block__dot" style="background: var(--color-tertiary);"></span>
+              Chibis
+            </h3>
+            <p class="price-block__note">Tiempo estimado: 1 semana</p>
+            <div class="tiers__grid">
+              <article class="tier-card card" id="tier-chibi-simple-1-2">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Simple Color — 1 o 2 per.</h4>
+                <p class="tier-card__price badge">$5 USD</p>
+                <p class="tier-card__description">Chibi simple coloreado</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-chibi-simple-3-4">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Simple Color — 3 o 4 per.</h4>
+                <p class="tier-card__price badge">$8 USD</p>
+                <p class="tier-card__description">Chibi simple — grupo</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-chibi-full-1-2">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Full Color — 1 o 2 per.</h4>
+                <p class="tier-card__price badge">$7 USD</p>
+                <p class="tier-card__description">Chibi full color</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+            </div>
+          </article>
+
+          <!-- TERNURINES -->
+          <article class="price-block" id="price-ternurines">
+            <h3 class="price-block__title">
+              <span class="price-block__dot" style="background: var(--color-secondary);"></span>
+              Ternurines
+            </h3>
+            <p class="price-block__note">Tiempo estimado: 1 semana</p>
+            <div class="tiers__grid">
+              <article class="tier-card card" id="tier-ternurin-1">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">1 Ternurín</h4>
+                <p class="tier-card__price badge">$10 USD</p>
+                <p class="tier-card__description">Diseño singular adorable</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-ternurin-2">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">2 Ternurines</h4>
+                <p class="tier-card__price badge">$15 USD</p>
+                <p class="tier-card__description">Pareja o duo</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-ternurin-bebe">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">1 Ternurín bebé</h4>
+                <p class="tier-card__price badge">$7 USD</p>
+                <p class="tier-card__description">Versión mini/bebé</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+            </div>
+          </article>
+
+          <!-- PORCELANITAS -->
+          <article class="price-block" id="price-porcelanitas">
+            <h3 class="price-block__title">
+              <span class="price-block__dot" style="background: linear-gradient(135deg, #fbcfe8, #c084fc);"></span>
+              Porcelanitas
+            </h3>
+            <p class="price-block__note">Tiempo estimado: 1 a 2 semanas</p>
+            <div class="tiers__grid">
+              <article class="tier-card card" id="tier-porce-headshot">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Headshot</h4>
+                <p class="tier-card__price badge">$8 USD</p>
+                <p class="tier-card__description">Retrato estilo porcelana</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-porce-half">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Half Body</h4>
+                <p class="tier-card__price badge">$12 USD</p>
+                <p class="tier-card__description">Medio cuerpo estilo porcelana</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-porce-full">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Full Body</h4>
+                <p class="tier-card__price badge">$16 USD</p>
+                <p class="tier-card__description">Cuerpo entero estilo porcelana</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+            </div>
+          </article>
+
+          <!-- YCH + Lineart -->
+          <article class="price-block" id="price-extras">
+            <h3 class="price-block__title">
+              <span class="price-block__dot" style="background: var(--gradient-gold);"></span>
+              <span>Extras y Opciones especiales</span>
+            </h3>
+            <p class="price-block__note">Tiempo estimado: 1 semana</p>
+            <div class="tiers__grid">
+              <article class="tier-card card" id="tier-ych-relicario">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">YCH Relicario</h4>
+                <p class="tier-card__price badge">$10 USD</p>
+                <p class="tier-card__description">Colores, texto y fondo personalizable</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-lineart">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Lineart</h4>
+                <p class="tier-card__price badge">$15 USD</p>
+                <p class="tier-card__description">Solo el lineart finalizado</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+              <article class="tier-card card" id="tier-flatcolor">
+                <div class="placeholder tier-card__image" style="aspect-ratio: 1/1"></div>
+                <h4 class="tier-card__title">Flat Color</h4>
+                <p class="tier-card__price badge">$25 USD</p>
+                <p class="tier-card__description">Lineart + colores planos</p>
+                <a class="btn btn--primary tier-card__cta" href="contacto.html">Pedir ✦</a>
+              </article>
+            </div>
+          </article>
+
+          <!-- NOTAS GENERALES -->
+          <aside class="price-notes card" aria-label="Notas sobre precios">
+            <h3 class="price-notes__title">Notas importantes sobre precios</h3>
+            <ul class="price-notes__list">
+              <li>✦ Todos los precios son para <strong>uso personal</strong>.</li>
+              <li>✦ Personaje extra: <strong>+50%</strong> del precio base.</li>
+              <li>✦ Fondo simple <strong>incluido</strong>. Fondos complicados tienen costo extra.</li>
+              <li>✦ Pago por <strong>PayPal</strong>. Si el precio supera $20 USD, se permite pagar 50% al inicio y 50% al finalizar.</li>
+              <li>✦ Para <strong>uso comercial</strong>, consultá directamente.</li>
+              <li>🚫 <strong>Prohibido</strong> ingresar las ilustraciones a cualquier IA.</li>
+            </ul>
+            <a class="btn btn--ghost" href="contacto.html#tos">Leer Términos y Condiciones completos →</a>
+          </aside>
+        </div>
+      </section>
+
+      <!-- =================== PROCESO =================== -->
+      <section class="process reveal" aria-labelledby="process-title">
+        <div class="container process__container">
+          <header class="process__header">
+            <p class="label">Cómo funciona</p>
+            <h2 class="process__title" id="process-title">El Proceso Creativo</h2>
+            <div class="section-divider"></div>
+          </header>
+
+          <div class="process__grid">
+            <article class="process__step card" id="step-inquiry">
+              <p class="process__number process__number--gold">01</p>
+              <h3 class="process__step-title">Consulta</h3>
+              <p class="process__step-description">
+                Compartís tu visión: tipo de comisión, cantidad de personajes y todo el material de referencia necesario (poses, expresiones, ambientación, etc).
+              </p>
+            </article>
+
+            <article class="process__step process__step--offset card mt-8" id="step-draft">
+              <p class="process__number process__number--gold">02</p>
+              <h3 class="process__step-title">Boceto</h3>
+              <p class="process__step-description">
+                Preparo el boceto de composición para que revisés la pose general. Hasta 3 propuestas de composición incluidas.
+              </p>
+            </article>
+
+            <article class="process__step card" id="step-refine">
+              <p class="process__number process__number--gold">03</p>
+              <h3 class="process__step-title">Delineado & Color</h3>
+              <p class="process__step-description">
+                Enviamos avances del delineado y el color base para tus revisiones. El resultado final se revisa antes de la entrega en alta resolución.
+              </p>
+            </article>
+
+            <article class="process__step process__step--offset card mt-8" id="step-delivery">
+              <p class="process__number process__number--gold">04</p>
+              <h3 class="process__step-title">Entrega</h3>
+              <p class="process__step-description">
+                La ilustración finalizada se envía por correo o Google Drive (disponible 30 días). ¡Tu arte listo para usar y disfrutar!
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================== CTA =================== -->
+      <section class="commission-cta reveal" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="commission-cta__card">
+            <div class="orb orb--primary" style="width: 30vw; height: 30vw; top: -50%; left: -10%;"></div>
+            <div class="orb orb--secondary" style="width: 20vw; height: 20vw; bottom: -30%; right: -5%;"></div>
+            <p class="label">¿Todo listo?</p>
+            <h2 class="commission-cta__title" id="cta-title">
+              ¡Hagamos algo<br /><span class="hero__title--accent">hermoso juntos!</span>
+            </h2>
+            <p class="commission-cta__desc">
+              Enviame un mensaje contándome tu idea y te respondo en menos de 48 horas.
+            </p>
+            <a class="btn btn--commission" href="contacto.html" id="cta-contact-btn">
+              ✦ Contactar ahora
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <article class="footer__brand">
+          <h2 class="footer__title">✦ Estiellart</h2>
+          <p class="footer__copyright">© 2025 Estiellart. Todos los derechos reservados.</p>
+          <p class="footer__anti-ai">🚫 Prohibido el uso de mis ilustraciones para entrenar IAs.</p>
+        </article>
+
+        <article class="footer__meta">
+          <ul class="footer__socials" aria-label="Redes sociales">
+            <li>
+              <a class="footer__link" href="https://www.instagram.com/estiellart/" target="_blank" rel="noopener">Instagram</a>
+            </li>
+            <li>
+              <a class="footer__link" href="https://x.com/estiellart" target="_blank" rel="noopener">X (Twitter)</a>
+            </li>
+            <li>
+              <a class="footer__link" href="https://www.facebook.com/Estiellart/" target="_blank" rel="noopener">Facebook</a>
+            </li>
+          </ul>
+          <a class="footer__link footer__link--privacy" href="contacto.html#tos">Términos y Condiciones</a>
+        </article>
+      </div>
+    </footer>
+  </body>
+</html>

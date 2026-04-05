@@ -1,0 +1,165 @@
+:root {
+  /* === FONTS === */
+  --font-headline: 'Comfortaa', cursive;
+  --font-body: 'Manrope', sans-serif;
+  --font-label: 'Manrope', sans-serif;
+  --font-icon: 'Material Symbols Outlined', sans-serif;
+
+  /* === COLORS: Dark Artistic Palette === */
+  /* Fondo principal: casi negro con tinte violeta */
+  --color-background: #0d0a14;
+  --color-surface: #120f1a;
+
+  /* Superficie de tarjetas */
+  --color-surface-variant: #1e1a2a;
+  --color-surface-container-lowest: #181422;
+  --color-surface-container-low: #1e1a2a;
+  --color-surface-container: #251f35;
+  --color-surface-container-high: #2d2640;
+  --color-surface-container-highest: #36304d;
+
+  /* Texto sobre el fondo oscuro */
+  --color-on-surface: #ede8f7;
+  --color-on-surface-variant: #a899c7;
+  --color-on-primary: #ffffff;
+
+  /* Acento primario: Rosa-Lavanda vibrante */
+  --color-primary: #c084fc;
+  --color-primary-container: #7c3aed;
+  --color-primary-glow: rgba(124, 58, 237, 0.4);
+
+  /* Acento secundario: Rosa hot */
+  --color-secondary: #f472b6;
+  --color-secondary-container: rgba(244, 114, 182, 0.15);
+  --color-on-secondary: #ffffff;
+
+  /* Acento terciario: Dorado/Amarillo */
+  --color-tertiary: #fbbf24;
+  --color-tertiary-fixed: #fbbf24;
+  --color-tertiary-fixed-dim: #f59e0b;
+  --color-on-tertiary-container: #451a03;
+
+  /* Estado: Error y Éxito */
+  --color-error: #f87171;
+  --color-success-700: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-100: #dcfce7;
+
+  /* Outline */
+  --color-outline-variant: rgba(255, 255, 255, 0.08);
+  --color-outline-soft: rgba(255, 255, 255, 0.06);
+
+  /* Glassmorphism: fondo del nav */
+  --color-glass-nav: rgba(13, 10, 20, 0.75);
+  --color-overlay-dark: rgba(13, 10, 20, 0.7);
+
+  /* === SHAPE === */
+  --radius-squircle: 16px;
+  --radius-squircle-lg: 32px;
+  --radius-pill: 9999px;
+
+  /* === SHADOWS (glow-based para dark mode) === */
+  --shadow-hero: 0 40px 80px -20px rgba(124, 58, 237, 0.3);
+  --shadow-card: 0 12px 24px -8px rgba(0, 0, 0, 0.5);
+  --shadow-nav: 0 24px 40px -15px rgba(0, 0, 0, 0.4);
+  --shadow-form: 0 32px 64px -20px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 20px 40px -12px rgba(124, 58, 237, 0.25);
+  --shadow-glow-primary: 0 0 40px rgba(192, 132, 252, 0.2);
+  --shadow-glow-secondary: 0 0 40px rgba(244, 114, 182, 0.2);
+
+  /* === SPACING === */
+  --space-2xs: 0.125rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  /* === TYPOGRAPHY SCALE === */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+  --text-3xl: clamp(2.25rem, 1.6rem + 3vw, 3.5rem);
+
+  /* === LAYOUT === */
+  --container-max: 72rem;
+  --container-padding: var(--space-md);
+  --nav-offset-top: var(--space-md);
+  --nav-z-index: 1000;
+
+  /* === TRANSITIONS === */
+  --transition-tonal: background-color 0.3s ease, color 0.3s ease;
+  --transition-hover: transform 0.3s ease, box-shadow 0.3s ease;
+  --transition-image: transform 0.5s ease;
+  --transition-overlay: opacity 0.3s ease;
+  --transition-fast: 0.2s ease;
+
+  /* === GRADIENTS === */
+  --gradient-hero: linear-gradient(135deg, #0d0a14 0%, #1a0b2e 50%, #0d0a14 100%);
+  --gradient-card-overlay: linear-gradient(to top, rgba(13, 10, 20, 0.95) 0%, rgba(13, 10, 20, 0.4) 60%, transparent 100%);
+  --gradient-accent: linear-gradient(135deg, #c084fc, #f472b6);
+  --gradient-gold: linear-gradient(135deg, #fbbf24, #f59e0b);
+  --gradient-cta: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+}
+
+/* ============================================================
+   TEMA CLARO
+   ============================================================ */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --color-background:                  #faf8ff;
+  --color-surface:                     #f3f0ff;
+  --color-surface-variant:             #e8e0ff;
+  --color-surface-container-lowest:    #ffffff;
+  --color-surface-container-low:       #f5f2ff;
+  --color-surface-container:           #ede8ff;
+  --color-surface-container-high:      #e3dcff;
+  --color-surface-container-highest:   #d8ceff;
+
+  --color-on-surface:         #1a0b2e;
+  --color-on-surface-variant: #5c4a8a;
+  --color-on-primary:         #ffffff;
+  --color-on-secondary:       #ffffff;
+
+  --color-primary:           #6d28d9;
+  --color-primary-container: #6d28d9;
+  --color-primary-glow:      rgba(109, 40, 217, 0.15);
+  --color-secondary:         #be185d;
+  --color-secondary-container: rgba(190, 24, 93, 0.1);
+  --color-tertiary:          #d97706;
+  --color-tertiary-fixed:    rgba(217, 119, 6, 0.15);
+
+  --color-glass-nav:      rgba(250, 248, 255, 0.88);
+  --color-overlay-dark:   rgba(26, 11, 46, 0.55);
+  --color-outline-variant: rgba(26, 11, 46, 0.1);
+  --color-outline-soft:    rgba(26, 11, 46, 0.06);
+
+  --shadow-hero:  0 40px 80px -20px rgba(109, 40, 217, 0.12);
+  --shadow-card:  0 12px 24px -8px rgba(26, 11, 46, 0.08);
+  --shadow-nav:   0 24px 40px -15px rgba(26, 11, 46, 0.06);
+  --shadow-form:  0 32px 64px -20px rgba(26, 11, 46, 0.05);
+  --shadow-hover: 0 20px 40px -12px rgba(109, 40, 217, 0.15);
+  --shadow-glow-primary:   0 0 40px rgba(109, 40, 217, 0.12);
+  --shadow-glow-secondary: 0 0 40px rgba(190, 24, 93, 0.08);
+
+  --gradient-hero: linear-gradient(135deg, #faf8ff 0%, #f0e8ff 50%, #faf8ff 100%);
+  --gradient-card-overlay: linear-gradient(to top, rgba(26, 11, 46, 0.92) 0%, rgba(26, 11, 46, 0.35) 60%, transparent 100%);
+}
+
+/* Orbes más sutiles en modo claro */
+[data-theme="light"] .orb--primary {
+  background: radial-gradient(circle, rgba(109, 40, 217, 0.1) 0%, transparent 70%);
+}
+[data-theme="light"] .orb--secondary {
+  background: radial-gradient(circle, rgba(190, 24, 93, 0.08) 0%, transparent 70%);
+}
+[data-theme="light"] .orb--gold {
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+}
