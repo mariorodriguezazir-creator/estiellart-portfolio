@@ -95,9 +95,14 @@
 
           <article class="hero__media reveal" aria-label="Arte destacado de Estiellart">
             <div class="hero__image-frame">
-              <div class="placeholder hero__image" style="aspect-ratio: 4/5" id="hero-artwork-placeholder">
-                <span class="placeholder__text">Tu arte aquí ✦</span>
-              </div>
+              <img
+                src="img/hero-imagen/41e95715-6b14-40b0-be30-b97e6b61474d.jpg"
+                alt="Ilustración destacada de Estiellart"
+                class="hero__image"
+                style="aspect-ratio: 4/5; width: 100%; object-fit: cover; border-radius: var(--radius-xl);"
+                id="hero-artwork-placeholder"
+                loading="eager"
+              />
               <div class="hero__badge-status badge badge--open" aria-label="Comisiones abiertas">
                 <span class="store-header__status-dot animate-pulse" aria-hidden="true"></span>
                 <span id="hero-badge-text">Comisiones abiertas</span>
@@ -129,7 +134,7 @@
 
           <div class="gallery__grid" id="gallery-grid">
             <article class="gallery__item gallery__item--large" style="grid-column: span 8" data-category="semi-realista">
-              <div class="placeholder gallery__media" style="aspect-ratio: 16/9" id="gallery-item-1"></div>
+              <img src="img/Semi-realista/abd993fd-4462-4267-988b-76daccd1a641.jpg" alt="Arte semi-realista de Estiellart" class="gallery__media" style="aspect-ratio: 16/9; width: 100%; object-fit: cover; display: block;" id="gallery-item-1" loading="lazy" />
               <div class="gallery__overlay">
                 <div>
                   <h3 class="gallery__overlay-title">Arte Semi-Realista</h3>
@@ -139,7 +144,7 @@
             </article>
 
             <article class="gallery__item gallery__item--small" style="grid-column: span 4" data-category="chibi">
-              <div class="placeholder gallery__media" style="aspect-ratio: 1/1" id="gallery-item-2"></div>
+              <img src="img/Chibi/9767e5ab-9eb8-48ac-8d87-8022c32f184b.jpg" alt="Chibi full color de Estiellart" class="gallery__media" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" id="gallery-item-2" loading="lazy" />
               <div class="gallery__overlay">
                 <div>
                   <h3 class="gallery__overlay-title">Chibi Full Color</h3>
@@ -149,7 +154,7 @@
             </article>
 
             <article class="gallery__item gallery__item--small" style="grid-column: span 4" data-category="ternurines">
-              <div class="placeholder gallery__media" style="aspect-ratio: 1/1" id="gallery-item-3"></div>
+              <img src="img/Ternuri/990c20b7-6f8f-425c-b1c4-0d412402f761.jpg" alt="Ternurin de Estiellart" class="gallery__media" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" id="gallery-item-3" loading="lazy" />
               <div class="gallery__overlay">
                 <div>
                   <h3 class="gallery__overlay-title">Ternurin</h3>
@@ -159,7 +164,7 @@
             </article>
 
             <article class="gallery__item gallery__item--large" style="grid-column: span 8" data-category="semi-realista">
-              <div class="placeholder gallery__media" style="aspect-ratio: 16/9" id="gallery-item-4"></div>
+              <img src="img/Semi-realista/c4ca17af-2a25-4aca-865f-3bcebce6afdb.jpg" alt="Fan art semi-realista de Estiellart" class="gallery__media" style="aspect-ratio: 16/9; width: 100%; object-fit: cover; display: block;" id="gallery-item-4" loading="lazy" />
               <div class="gallery__overlay">
                 <div>
                   <h3 class="gallery__overlay-title">Fan Art</h3>
@@ -169,7 +174,7 @@
             </article>
 
             <article class="gallery__item gallery__item--portrait" style="grid-column: span 4" data-category="sketch">
-              <div class="placeholder gallery__media" style="aspect-ratio: 3/4" id="gallery-item-5"></div>
+              <img src="img/Sketch/ad09dd92-026b-4fae-a0c6-98b340df049c.jpg" alt="Sketch artístico de Estiellart" class="gallery__media" style="aspect-ratio: 3/4; width: 100%; object-fit: cover; display: block;" id="gallery-item-5" loading="lazy" />
               <div class="gallery__overlay">
                 <div>
                   <h3 class="gallery__overlay-title">Sketch Color</h3>
@@ -179,7 +184,7 @@
             </article>
 
             <article class="gallery__item gallery__item--square" style="grid-column: span 4" data-category="chibi">
-              <div class="placeholder gallery__media" style="aspect-ratio: 1/1" id="gallery-item-6"></div>
+              <img src="img/Chibi/e73e88b0-4e67-45c7-a0e0-c87105d996a0.jpg" alt="Chibi simple color de Estiellart" class="gallery__media" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" id="gallery-item-6" loading="lazy" />
               <div class="gallery__overlay">
                 <div>
                   <h3 class="gallery__overlay-title">Chibi Simple Color</h3>
@@ -189,7 +194,7 @@
             </article>
 
             <article class="gallery__item gallery__item--square" style="grid-column: span 4" data-category="ternurines">
-              <div class="placeholder gallery__media" style="aspect-ratio: 1/1" id="gallery-item-7"></div>
+              <img src="img/Ternuri/b0d77772-de0b-4d78-a9bc-1de51d17e6d4.jpg" alt="Ternurines de Estiellart" class="gallery__media" style="aspect-ratio: 1/1; width: 100%; object-fit: cover; display: block;" id="gallery-item-7" loading="lazy" />
               <div class="gallery__overlay">
                 <div>
                   <h3 class="gallery__overlay-title">Ternurines</h3>
@@ -220,22 +225,26 @@
 
           <div class="shop-bento__grid" aria-label="Ejemplos de comisiones">
             <article class="shop-bento__item">
-              <div class="placeholder shop-bento__media" style="aspect-ratio: 1/1">
+              <div class="shop-bento__media" style="aspect-ratio: 1/1; position: relative; overflow: hidden;">
+                <img src="img/fullcolor-halfbody/844c4656-e7a6-4606-8ca0-71544a35da4d.jpg" alt="Comisión full color" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy" />
                 <span class="shop-bento__label">Full Color</span>
               </div>
             </article>
             <article class="shop-bento__item">
-              <div class="placeholder shop-bento__media" style="aspect-ratio: 1/1">
+              <div class="shop-bento__media" style="aspect-ratio: 1/1; position: relative; overflow: hidden;">
+                <img src="img/Chibi/9767e5ab-9eb8-48ac-8d87-8022c32f184b.jpg" alt="Comisión chibi" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy" />
                 <span class="shop-bento__label">Chibi</span>
               </div>
             </article>
             <article class="shop-bento__item">
-              <div class="placeholder shop-bento__media" style="aspect-ratio: 1/1">
+              <div class="shop-bento__media" style="aspect-ratio: 1/1; position: relative; overflow: hidden;">
+                <img src="img/Ternuri/b0d77772-de0b-4d78-a9bc-1de51d17e6d4.jpg" alt="Comisión ternurín" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy" />
                 <span class="shop-bento__label">Ternurín</span>
               </div>
             </article>
             <article class="shop-bento__item">
-              <div class="placeholder shop-bento__media" style="aspect-ratio: 1/1">
+              <div class="shop-bento__media" style="aspect-ratio: 1/1; position: relative; overflow: hidden;">
+                <img src="img/Skeatch-halfbody/1ccc4c1b-7454-4a24-b92b-17efc473d897.jpg" alt="Comisión sketch" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy" />
                 <span class="shop-bento__label">Sketch</span>
               </div>
             </article>
